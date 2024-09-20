@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <form action="/signup/" method="POST"
+                class="card card-body text-center">
+                <h1 class="text-center">REGISTRARSE</h1>
+                {{error}}
+                {% csrf_token %}
+                <!--     {{form.as_p}}
+    formulario por defecto-->
+                <div class="mb-3">
+                    <label for="nombre">nombre:</label>
+                    <input type="text" name="username" id="username" class="form-control"
+                        placeholder="escribe tu nombre de usuario">
+                </div>
+
+                <div class="mb-3">
+                    <label for="password1">password:</label>
+                    <input type="password" name="password1" id="password1" class="form-control"
+                        placeholder="escribe tu clave">
+                </div>
+                <div class="mb-3">
+                    <label for="password2">confirma tu password:</label>
+                    <input type="password" name="password2" id="password2" class="form-control"
+                        placeholder="repite tu clave">
+                </div>
+                <button btn btn-primary>
+                    signup
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock content %}
